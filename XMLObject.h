@@ -52,7 +52,7 @@
 - (void)setObject:(XMLObject *)xmlObject forKey:(NSString *)key;
 - (void)addObject:(XMLObject *)xmlObject forKey:(NSString *)key atIndex:(NSInteger)index;
 - (void)addObject:(XMLObject *)xmlObject forKey:(NSString *)key;
-- (void)removeObject:(XMLObject *)xmlObject forKey:(NSString *)key atIndex:(NSInteger)index;
-- (void)removeObject:(XMLObject *)xmlObject forKey:(NSString *)key;
+- (void)removeObjectForKey:(NSString *)key atIndex:(NSInteger)index;
+- (void)removeObjectForKey:(NSString *)key;
 
 @end
