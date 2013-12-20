@@ -302,7 +302,7 @@
     [self addObject:xmlObject forKey:key atIndex:NSIntegerMax];
 }
 
-- (void)removeObject:(XMLObject *)xmlObject forKey:(NSString *)key atIndex:(NSInteger)index {
+- (void)removeObjectForKey:(NSString *)key atIndex:(NSInteger)index {
     for (NSInteger i = 0; i < self.rootArray.count; i++) {
         NSMutableDictionary *dictionary = [self.rootArray objectAtIndex:i];
         if ([dictionary objectForKey:key] && (index == NSIntegerMax)?YES:(i == index)) {
@@ -312,8 +312,8 @@
     }
 }
 
-- (void)removeObject:(XMLObject *)xmlObject forKey:(NSString *)key {
-    [self removeObject:xmlObject forKey:key atIndex:NSIntegerMax];
+- (void)removeObjectForKey:(NSString *)key {
+    [self removeObjectForKey:key atIndex:NSIntegerMax];
 }
 
 #pragma mark - NSXMLParserDelegate
