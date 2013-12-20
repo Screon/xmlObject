@@ -1,4 +1,4 @@
 xmlObject
 =========
 
-xmlObject is a COCOA class that improves the interaction with XML.
+XMLObject class synchronously creates a structure, that can be used in dictionary-like and array-like styles.
