@@ -11,16 +11,19 @@
 #define CHARACTERS @"__characters__"
 #define ELEMENTS @"__elements__"
 
-@implementation NSString (XMLObject)
+@implementation NSObject (XMLObject)
 
-- (NSString *)stringByReplacingQuotes {
-    NSString *value = [NSString stringWithString:self];
-    value = [value stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
-    value = [value stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
-    value = [value stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
-    value = [value stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
-    value = [value stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"];
-    return value;
+- (id)stringByReplacingQuotes {
+    if ([self isKindOfClass:[NSString class]]) {
+        NSString *value = [NSString stringWithString:(NSString *)self];
+        value = [value stringByReplacingOccurrencesOfString:@"\"" withString:@"&quot;"];
+        value = [value stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
+        value = [value stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
+        value = [value stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
+        value = [value stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"];
+        return value;
+    }
+    return self;
 }
 
 @end
